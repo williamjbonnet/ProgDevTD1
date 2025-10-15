@@ -27,13 +27,6 @@ jobs:
       - run: npm run build
 
   security-audit:
-    docker:
-      - image: circleci/node:14
-    steps:
-      - checkout
-      - run:
-          name: Install dependencies
-          command: npm install
       - run:
           name: Run npm audit
           command: npm audit --audit-level=critical
